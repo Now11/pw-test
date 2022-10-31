@@ -33,3 +33,4 @@ jobs:
             BROWSER_TYPE: "chrome"
             TESTS_PATH: "**/specs/**/*.test.[jt]s?(x)"
             HEADLESS: true
+            FORCE_COLOR: 1
