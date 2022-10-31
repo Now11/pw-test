@@ -7,7 +7,7 @@ const config: PlaywrightTestConfig = {
 	use: {
 		actionTimeout: 30000,
 		baseURL: process.env.APP_URL,
-		headless: false,
+		headless: Boolean(process.env.HEADLESS) || true,
 		channel: process.env.BROWSER_TYPE || 'chrome',
 		viewport: { width: 1600, height: 960 },
 		screenshot: 'only-on-failure',

@@ -32,3 +32,4 @@ jobs:
             API_URL: https://gql.twitch.tv/gql
             BROWSER_TYPE: "chrome"
             TESTS_PATH: "**/specs/**/*.test.[jt]s?(x)"
+            HEADLESS: true
