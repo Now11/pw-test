@@ -1,0 +1,35 @@
+{
+	"name": "pw-test",
+	"version": "1.0.0",
+	"scripts": {
+		"build": "rm -rf build && tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
+		"test:e2e": "npm run build && npx playwright test --config=./build/playwright.config.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Now11/pw-test.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Now11/pw-test/issues"
+	},
+	"homepage": "https://github.com/Now11/pw-test#readme",
+	"dependencies": {
+		"@playwright/test": "^1.24.2",
+		"dotenv": "^16.0.1",
+		"got": "^12.3.0",
+		"log4js": "^6.6.1",
+		"typescript": "^4.7.4"
+	},
+	"devDependencies": {
+		"@types/node": "^18.6.3",
+		"@typescript-eslint/eslint-plugin": "^5.31.0",
+		"@typescript-eslint/parser": "^5.31.0",
+		"eslint": "^8.20.0",
+		"eslint-config-prettier": "^8.5.0",
+		"prettier": "^2.7.1",
+		"tsc-alias": "^1.7.0"
+	}
+}

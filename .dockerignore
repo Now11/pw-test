@@ -1,0 +1,15 @@
+# Utility files
+.git
+.editorconfig
+.env.example
+.eslintignore
+.eslintrc.json
+.github
+.vscode
+README.md
+
+# Directories
+build
+node_modules
+test-results
+output
