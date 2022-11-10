@@ -1,5 +1,5 @@
-import { Locator, Page } from '@playwright/test';
 import { BasePage } from '@src/base';
+import { Locator } from 'playwright';
 import { HeaderFragment } from '@src/components';
 import { InputWithDropDown } from '@src/elements';
 
@@ -15,8 +15,8 @@ class DirectoryPage extends BasePage {
 	private readonly cardTitleSelector: string;
 	private readonly cardTagsSelector: string;
 
-	constructor(page: Page) {
-		super(page);
+	constructor() {
+		super();
 		this.url = '/directory';
 		this.header = this.fragment(HeaderFragment, '.top-nav__menu', 'Header ');
 		this.filterByCategory = this.fragment(
@@ -30,6 +30,7 @@ class DirectoryPage extends BasePage {
 	}
 
 	async getGamesInfo() {
+		this.logger.info('Get games cards info');
 		const itemsInfo: IGameCardIfon[] = [];
 		for (let i = 0; i < (await this.gameCards.count()); i++) {
 			const cardName = await this.gameCards.nth(i).locator(this.cardTitleSelector).innerText();

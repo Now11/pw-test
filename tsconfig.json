@@ -6,15 +6,17 @@
 		"outDir": "./build",
 		"emitDecoratorMetadata": true,
 		"allowJs": true,
+		"strict": true,
 		"experimentalDecorators": true,
 		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"pretty": true,
+		"types": ["jest", "jest-playwright-preset", "expect-playwright"],
 		"baseUrl": ".",
 		"paths": {
 			"@src/*": ["src/*"],
-			"@api/*": ["api/*"],
-			"@test": ["entrypoint.ts"]
+			"@api/*": ["api/*"]
 		}
 	},
 

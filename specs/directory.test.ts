@@ -1,8 +1,9 @@
-import { expect } from '@playwright/test';
-import { test } from '@test';
+import { DirectoryPage } from '@src/pages';
 
-test.describe('Directions - Filter', async () => {
-	test('All cards must match filtered tag', async ({ page, directoryPage }) => {
+describe('Directions - Filter', () => {
+	const directoryPage = new DirectoryPage();
+
+	test('All cards must match filtered tag [1]', async () => {
 		const FILTERED_TAG = 'MMO';
 
 		await directoryPage.navigate();

@@ -4,3 +4,4 @@ package-lock.json
 .eslintrc.js
 build/*
 node_modules/*
+*.md

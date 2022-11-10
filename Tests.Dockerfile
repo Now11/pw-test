@@ -17,7 +17,7 @@ RUN apt-get update && apt-get -y install libnss3 libatk-bridge2.0-0 libdrm-dev l
 COPY package.json /app/
 
 # Install the dependencies in Node environment
-RUN npm install
+RUN npm ci
 
 # COPY other needed files to the tests folder in Docker image
 COPY . /app/

@@ -1,19 +1,14 @@
-import { Locator, Page } from '@playwright/test';
+import { Locator } from 'playwright';
 import { Base } from './base';
-
-/**
- * @class BaseFragment class
- * @description Creates simple fragmet of the page
- */
 
 class BaseComponent extends Base {
 	protected container: Locator;
-	protected rootSelector: string;
+	protected rootSelector?: string;
 
-	constructor(page: Page, name?: string, selector?: string) {
-		super(page, name);
+	constructor(name: string, selector?: string) {
+		super(name);
 		this.rootSelector = selector;
-		this.container = this.page.locator(this.rootSelector);
+		this.container = page.locator(this.rootSelector ?? 'body');
 	}
 
 	async waitForVisible(options: { timeout: number } = { timeout: 10000 }): Promise<boolean> {

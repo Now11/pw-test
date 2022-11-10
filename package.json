@@ -1,35 +1,56 @@
 {
-	"name": "pw-test",
+	"name": "pet",
 	"version": "1.0.0",
 	"scripts": {
-		"build": "rm -rf build && tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
-		"test:e2e": "npm run build && npx playwright test --config=./build/playwright.config.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Now11/pw-test.git"
+		"build": "tsc",
+		"format": "prettier --write",
+		"lint": "tsc --noEmit --skipLibCheck --pretty && eslint --fix --quiet",
+		"test:e2e": "jest -c jest.config.js --forceExit",
+		"lint-staged": "lint-staged",
+		"prepare": "husky install"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/Now11/pw-test/issues"
+	"lint-staged": {
+		"**/*.{js,ts,md}": [
+			"npm run format",
+			"npm run lint"
+		]
 	},
-	"homepage": "https://github.com/Now11/pw-test#readme",
 	"dependencies": {
-		"@playwright/test": "^1.24.2",
-		"dotenv": "^16.0.1",
-		"got": "^12.3.0",
-		"log4js": "^6.6.1",
-		"typescript": "^4.7.4"
+		"@types/jest-expect-message": "^1.1.0",
+		"dotenv": "^16.0.3",
+		"expect-playwright": "^0.8.0",
+		"husky": "^8.0.1",
+		"jest": "^28.1.3",
+		"jest-circus": "^28.1.3",
+		"jest-environment-node": "^28.1.3",
+		"jest-junit": "^14.0.1",
+		"jest-playwright-preset": "^2.0.0",
+		"jest-runner": "^28.1.3",
+		"lodash": "^4.17.21",
+		"log4js": "^6.7.0",
+		"playwright": "^1.27.1",
+		"ts-jest": "^28.0.8",
+		"ts-node": "^10.9.1",
+		"typescript": "^4.8.4"
 	},
 	"devDependencies": {
-		"@types/node": "^18.6.3",
-		"@typescript-eslint/eslint-plugin": "^5.31.0",
-		"@typescript-eslint/parser": "^5.31.0",
-		"eslint": "^8.20.0",
+		"@types/jest": "^28.1.1",
+		"@types/node": "^18.11.9",
+		"@typescript-eslint/eslint-plugin": "^5.42.1",
+		"@typescript-eslint/parser": "^5.42.1",
+		"eslint": "^8.27.0",
+		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-config-prettier": "^8.5.0",
-		"prettier": "^2.7.1",
-		"tsc-alias": "^1.7.0"
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-no-only-tests": "^3.1.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"lint-staged": "^13.0.3"
+	},
+	"jest": {
+		"verbose": false,
+		"setupTestFrameworkScriptFile": "jest-expect-message"
 	}
 }

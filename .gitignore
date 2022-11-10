@@ -11,3 +11,5 @@ trace.log
 
 # Tests output
 test-results
+report
+junit.xml

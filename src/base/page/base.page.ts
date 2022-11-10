@@ -1,21 +1,21 @@
-import config from '../../../playwright.config';
-import { Page } from '@playwright/test';
+import dotenv from 'dotenv';
 import { Base } from './base';
 import { BaseComponent } from './base.component';
 
+dotenv.config();
+
 export class BasePage extends Base {
 	protected url = '';
-
-	constructor(page: Page) {
-		super(page);
+	constructor() {
+		super();
 	}
 
 	protected fragment<T extends BaseComponent | Base>(
-		fragmentClass: new (page: Page, selector: string, name: string) => T,
+		fragmentClass: new (selector: string, name: string) => T,
 		selector: string,
-		name?: string,
+		name: string,
 	): T {
-		return new fragmentClass(this.page, selector, name);
+		return new fragmentClass(selector, name);
 	}
 
 	async navigate(
@@ -23,7 +23,7 @@ export class BasePage extends Base {
 			timeout: 15000,
 		},
 	): Promise<void> {
-		await this.page.goto(new URL(this.url, config.use.baseURL).href, {
+		await page.goto(new URL(this.url, process.env.APP_URL).href, {
 			timeout: options?.timeout,
 			waitUntil: options?.waitUntil ?? 'domcontentloaded',
 		});
@@ -35,6 +35,6 @@ export class BasePage extends Base {
 			state?: 'load' | 'domcontentloaded' | 'networkidle';
 		} = { timeout: 15000, state: 'domcontentloaded' },
 	): Promise<void> {
-		await this.page.waitForLoadState(options?.state, { timeout: options?.timeout });
+		await page.waitForLoadState(options?.state, { timeout: options?.timeout });
 	}
 }

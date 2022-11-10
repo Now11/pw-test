@@ -3,7 +3,7 @@
  */
 
 import { Logger } from 'log4js';
-import { Locator } from '@playwright/test';
+import { Locator } from 'playwright';
 
 const possibleGetTextValues = ['innerText', 'textContent', 'inputValue'];
 

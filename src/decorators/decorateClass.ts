@@ -11,7 +11,7 @@ export function Log(target: Function): void {
 
 	classMethodNames.forEach((method) => {
 		const originalMethod: Function = target.prototype[method];
-		target.prototype[method] = async function (...args) {
+		target.prototype[method] = async function (...args: any[]) {
 			this.logger.info(`Call method ${method}`);
 			return originalMethod.call(this, ...args);
 		};
