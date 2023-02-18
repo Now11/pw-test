@@ -1,0 +1,209 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Results</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #444;
+        background-color: #f7f7f7;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1rem;
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #444;
+      }
+
+      p {
+        margin: 0 0 1rem;
+        font-size: 1.1rem;
+      }
+
+      h2 {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        color: #444;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 2rem;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 0.5rem;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        font-weight: bold;
+        background-color: #f7f7f7;
+        color: #444;
+      }
+
+      td {
+        vertical-align: top;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .failed {
+        color: #dc3545;
+        font-weight: bold;
+      }
+
+      .skipped {
+        color: #ffc107;
+        font-weight: bold;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      .test-name {
+        width: 50%;
+      }
+      .result {
+        width: 20%;
+      }
+      .message {
+        width: 30%;
+      }
+      .failed {
+        color: red;
+        font-weight: bold;
+      }
+      .skipped {
+        color: orange;
+        font-weight: bold;
+      }
+      code {
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Test Results</h1>
+      <p>Number of tests: 4</p>
+      <p>Number of failures: 3</p>
+      <p>Number of skipped tests: 0</p>
+      <h2>Test Cases</h2>
+      <table>
+      <thead>
+        <tr>
+          <th>Test Name</th>
+          <th>Result</th>
+          <th>Duration</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+              <tr>
+                <td class="test-name">User modal settings: User modal settings User is able to change theme to Dark [2]</td>
+                <td class="test-result failed">Failed</td>
+                <td class="test-duration">6.396ms</td>
+                <td>
+                  <code>Error: Custom message:
+  Wrong background color with Dark mode enabled
+
+expect(received).toEqual(expected) // deep equality
+
+Expected: "rgb(14, 14, 17)"
+Received: "rgb(14, 14, 16)"
+    at Object.<anonymous> (C:\Users\Denys\Desktop\pw-test\specs\general.test.ts:19:71)</code>
+                </td>
+              </tr>
+            
+              <tr>
+                <td class="test-name">User modal settings: User modal settings This test always fails [3]</td>
+                <td class="test-result failed">Failed</td>
+                <td class="test-duration">0.003ms</td>
+                <td>
+                  <code>Error: expect(received).toBeFalsy()
+
+Received: true
+    at Object.<anonymous> (C:\Users\Denys\Desktop\pw-test\specs\general.test.ts:23:16)
+    at Promise.then.completed (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\utils.js:333:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\utils.js:259:10)
+    at _callCircusTest (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\run.js:277:40)
+    at _runTest (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\run.js:209:3)
+    at _runTestsForDescribeBlock (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\run.js:97:9)
+    at _runTestsForDescribeBlock (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\run.js:91:9)
+    at run (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\run.js:31:3)
+    at runAndTransformResultsToJestFormat (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:135:21)</code>
+                </td>
+              </tr>
+            
+              <tr>
+                <td class="test-name">Directions - Filter: Directions - Filter All cards must match filtered tag [1]</td>
+                <td class="test-result failed">Failed</td>
+                <td class="test-duration">8.188ms</td>
+                <td>
+                  <code>undefined</code>
+                </td>
+              </tr>
+            
+              <tr>
+                <td class="test-name">Directions - Filter: Directions - Filter Failed test [4]</td>
+                <td class="test-result failed">Failed</td>
+                <td class="test-duration">0.003ms</td>
+                <td>
+                  <code>Error: expect(received).toBeFalsy()
+
+Received: true
+    at Object.<anonymous> (C:\Users\Denys\Desktop\pw-test\specs\directory.test.ts:25:16)
+    at Promise.then.completed (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\utils.js:333:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\utils.js:259:10)
+    at _callCircusTest (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\run.js:277:40)
+    at _runTest (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\run.js:209:3)
+    at _runTestsForDescribeBlock (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\run.js:97:9)
+    at _runTestsForDescribeBlock (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\run.js:91:9)
+    at run (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\run.js:31:3)
+    at runAndTransformResultsToJestFormat (C:\Users\Denys\Desktop\pw-test\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:135:21)</code>
+                </td>
+              </tr>
+            
+      </tbody>
+    </table>
+
+            </body>
+            </html>
+            

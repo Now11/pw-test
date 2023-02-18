@@ -20,4 +20,8 @@ describe('Directions - Filter', () => {
 			expect(tags, 'Wrong tag assigned to game card').toContain(FILTERED_TAG);
 		});
 	});
+
+	test('Failed test [4]', async () => {
+		expect(true).toBeFalsy();
+	});
 });

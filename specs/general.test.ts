@@ -4,7 +4,7 @@ describe('User modal settings', () => {
 	const directoryPage = new DirectoryPage();
 
 	test('User is able to change theme to Dark [2]', async () => {
-		const DARK_MODE_COLOR = 'rgb(14, 14, 16)'; //#0e0e10
+		const DARK_MODE_COLOR = 'rgb(14, 14, 17)'; //#0e0e10
 
 		await directoryPage.navigate();
 		await directoryPage.waitForLoaded({ state: 'networkidle' });
