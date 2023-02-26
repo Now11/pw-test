@@ -5,7 +5,9 @@ env:
     
 on:
     push:
-      branches: [ main ]
+      branches:
+        - main
+        - jest-playwright
 
 jobs:          
     tests:
