@@ -1,4 +1,9 @@
-/** @type {import('eslint').Linter.Config} */
+/**
+ * @typedef {import('eslint').Linter.Config} ESLintConfig
+ *
+ * @type {ESLintConfig}
+ */
+
 const config = {
 	root: true,
 	parser: '@typescript-eslint/parser',
@@ -53,6 +58,17 @@ const config = {
 				extendDefaults: true,
 			},
 		],
+		'no-missing-testcase-id': 'error',
+		// 'no-only-tests/no-only-tests': 'error',
+		// '@typescript-eslint/no-namespace': 'off',
+		// 'no-restricted-syntax': [
+		//   'error',
+		//   {
+		//     // eslint-disable-next-line
+		//     selector:'CallExpression[callee.name="describe"][arguments.0.quasis.0.value.raw=/^(?:(?!\\[\\d+\\]).)*$/s]:has(CallExpression > CallExpression[callee.name="it"]) CallExpression[callee.name="it"][arguments.0.quasis.0.value.raw=/^(?:(?!\\[\\d+\\]).)*$/s] ', // prettier-ignore
+		//     message: 'Missing [test_case_id] in the Title'
+		//   }
+		// ]
 	},
 };
 

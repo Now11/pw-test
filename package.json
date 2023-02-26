@@ -4,7 +4,7 @@
 	"scripts": {
 		"build": "tsc",
 		"format": "prettier --write",
-		"lint": "tsc --noEmit --skipLibCheck --pretty && eslint --fix --quiet",
+		"lint": "tsc --noEmit --skipLibCheck --pretty && eslint --fix --quiet --rulesdir ./eslint-rules",
 		"test:e2e": "jest -c jest.config.js --forceExit",
 		"lint-staged": "lint-staged",
 		"prepare": "husky install"
