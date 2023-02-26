@@ -21,7 +21,7 @@ class DirectoryPage extends BasePage {
 		this.header = this.fragment(HeaderFragment, '.top-nav__menu', 'Header ');
 		this.filterByCategory = this.fragment(
 			InputWithDropDown,
-			'[data-test-selector="tag-search-wrapper-selector"]',
+			'[data-a-target="tags-filter-dropdown"]',
 			'Filter By Category',
 		);
 		this.gameCards = this.container.locator('[data-target="directory-page__card-container"]');
